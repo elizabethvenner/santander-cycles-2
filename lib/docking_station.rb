@@ -12,7 +12,7 @@ class DockingStation
 		# 	@bike = bike
 			true
 		# else
-			#{}"This docking station is full"
+			#"This docking station is full"
 		# end
 	end
 
