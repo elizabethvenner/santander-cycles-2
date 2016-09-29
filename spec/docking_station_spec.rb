@@ -19,4 +19,15 @@ describe DockingStation do
       expect(station.dock(Bike.new)).to eq true
     end
 
+		it {is_expected.to respond_to :bike_available? }
+
+		it 'prints string telling user if a bike is available' do
+			expect(station.bike_available?).to eq "Bike(s) available"
+		end
+
+		it {is_expected.to respond_to :bike}
+
+		it 'tests wheter @bikes is an array'do
+		  expect(@bikes).to be_an_instance_of(Array)
+	end
 end
