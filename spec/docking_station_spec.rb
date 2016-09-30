@@ -2,8 +2,13 @@ require 'docking_station'
 
 describe DockingStation do
 
-  it 'creates a new instance of bike class using release_bike' do
-	  expect(subject.release_bike).to be_an_instance_of Bike
+	describe '.release_bike' do
+		context 'if the docking station is empty' do
+			it {is_expected.to raise_error('No bikes available')}
+		end
+		context 'if the docking station has bikes' do
+			it {is_expected.to be_an_instance_of Bike}
+		end
 	end
 
 	it 'checks whether the new instance of the bike class is_working?' do
