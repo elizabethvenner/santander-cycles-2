@@ -3,12 +3,7 @@ require 'docking_station'
 describe DockingStation do
 
 	describe '.release_bike' do
-	# 	#context 'if the docking station is empty' do
-	# 		it { Bike.new.release_bike }.to raise_error("No bikes available")
-	# 	end
-	# 	#context 'if the docking station has bikes' do
-	# 		it {is_expected.to be_an_instance_of Bike}
-	# 	end
+
 		it 'raises an error if no bike is available' do
 			expect {subject.release_bike}.to raise_error("No bikes available")
 		end
@@ -16,16 +11,9 @@ describe DockingStation do
 		it 'release a bike when a bike is present in the docking station' do
 			bike1 = Bike.new
 			subject.dock(bike1)
-			expect(subject.release_bike).to eq @bike
+			expect(subject.release_bike).to eq(bike1)
 		end
 
-
-
-			# it 'Releases a bike from the dock' do
-			# 	bike1 = Bike.new
-			# 	subject.dock(bike1)
-			# 	expects(subject.release_bike).to eq bike1
-			# end
 	end
 
 	it 'checks whether the new instance of the bike class is_working?' do
