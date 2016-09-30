@@ -16,7 +16,7 @@ describe DockingStation do
     it {is_expected.to respond_to :dock }
 
     it 'docks an instance of bike at the given docking station' do
-      expect(station.dock(Bike.new)).to eq true
+      expect(station.dock(Bike.new)).to eq bike
     end
 
 		it {is_expected.to respond_to :bike_available? }
@@ -27,7 +27,4 @@ describe DockingStation do
 
 		it {is_expected.to respond_to :bike}
 
-		it 'tests wheter @bikes is an array'do
-		  expect(@bikes).to be_an_instance_of(Array)
-	end
 end
